@@ -34,7 +34,7 @@ def generate_specs(module_name):
         except KeyError:
             pass  # means that the view is not registered. move along
 
-    return json.dumps(spec.to_dict())
+    return json.dumps(spec.to_dict(), indent=2)
 
 
 def import_service_module(module_name):
