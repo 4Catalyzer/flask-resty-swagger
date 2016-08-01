@@ -5,4 +5,4 @@ import sys
 from flask_resty_swagger import generate_specs
 
 MODULE_NAME = sys.argv[1]
-print generate_specs(MODULE_NAME)
+print(generate_specs(MODULE_NAME))
