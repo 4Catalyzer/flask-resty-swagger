@@ -21,7 +21,7 @@ setup(
     packages=['flask_resty_swagger'],
     zip_safe=False,
     install_requires=[
-        'apispec >= 0.6.0',
+        'apispec >= 0.14.0',
         'flask-resty >= 0.6.0',
         'marshmallow >= 2.4.2',
     ],
