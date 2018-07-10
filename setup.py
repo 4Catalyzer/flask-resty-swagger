@@ -22,7 +22,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'apispec >= 0.14.0',
-        'flask-resty >= 0.6.0',
+        'flask-resty >= 0.19.0',
         'marshmallow >= 2.4.2',
     ],
     scripts=['bin/flask-resty-swagger'],

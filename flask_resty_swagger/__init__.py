@@ -9,6 +9,7 @@ import inspect
 import sys
 
 from apispec import APISpec
+from flask_resty.spec import FlaskRestyPlugin
 from flask_resty.view import ApiView
 from marshmallow import Schema
 
@@ -22,7 +23,7 @@ def generate_specs(module_name):
     spec = APISpec(
         title=service_name,
         version='1.0.0',
-        plugins=('apispec.ext.marshmallow', 'flask_resty.spec'))
+        plugins=(FlaskRestyPlugin(),))
 
     schemas = get_subclasses(module.schemas, Schema)
     for schema in schemas:
