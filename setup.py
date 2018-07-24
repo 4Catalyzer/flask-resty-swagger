@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='flask_resty_swagger',
-    version='0.1.3',
+    version='0.2.0',
     description="Generate swagger documentation from flask-resty service",
     author="Giacomo Tagliabue",
     author_email="giacomo.tag@gmail.com",
