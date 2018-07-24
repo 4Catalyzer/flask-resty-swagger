@@ -1,4 +1,26 @@
-from setuptools import setup
+from setuptools import Command, setup
+import subprocess
+
+# -----------------------------------------------------------------------------
+
+
+def system(command):
+    class SystemCommand(Command):
+        user_options = []
+
+        def initialize_options(self):
+            pass
+
+        def finalize_options(self):
+            pass
+
+        def run(self):
+            subprocess.check_call(command, shell=True)
+
+    return SystemCommand
+
+
+# -----------------------------------------------------------------------------
 
 setup(
     name='flask_resty_swagger',
@@ -26,4 +48,10 @@ setup(
         'marshmallow >= 2.4.2',
     ],
     scripts=['bin/flask-resty-swagger'],
+    cmdclass={
+        'clean': system('rm -rf build dist *.egg-info'),
+        'package': system('python setup.py sdist bdist_wheel'),
+        'publish': system('twine upload dist/*'),
+        'release': system('python setup.py clean package publish'),
+    },
 )
