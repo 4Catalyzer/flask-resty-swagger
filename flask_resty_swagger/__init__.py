@@ -14,7 +14,7 @@ from flask_resty.view import ApiView
 from marshmallow import Schema
 
 
-def generate_specs(module_name):
+def generate_specs(module_name, **options):
     module = import_service_module(module_name)
     service_name = ''.split('.')[-1]
 
@@ -23,7 +23,9 @@ def generate_specs(module_name):
     spec = APISpec(
         title=service_name,
         version='1.0.0',
-        plugins=(FlaskRestyPlugin(),))
+        plugins=(FlaskRestyPlugin(),),
+        **options
+    )
 
     schemas = get_subclasses(module.schemas, Schema)
     for schema in schemas:
