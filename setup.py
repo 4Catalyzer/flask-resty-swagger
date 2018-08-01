@@ -24,7 +24,7 @@ def system(command):
 
 setup(
     name='flask_resty_swagger',
-    version='0.2.0',
+    version='0.2.1',
     description="Generate swagger documentation from flask-resty service",
     author="Giacomo Tagliabue",
     author_email="giacomo.tag@gmail.com",
